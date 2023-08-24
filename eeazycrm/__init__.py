@@ -47,8 +47,8 @@ def create_app(config_class=ProductionConfig):
 
     with app.app_context():
         # check if the config table exists, otherwise run install
-        engine = db.get_engine(app)
-        if not engine.dialect.has_table(engine, 'app_config'):
+        engine = db.engine
+        if not db.inspect(engine).has_table('app_config'):
             return run_install(app)
         else:
             from eeazycrm.settings.models import AppConfig

@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, FloatField
-from wtforms.fields.html5 import DateTimeLocalField
+from wtforms.fields import DateTimeLocalField
 from wtforms.widgets import TextArea
 from wtforms.validators import DataRequired, Optional
 from wtforms_sqlalchemy.fields import QuerySelectField
